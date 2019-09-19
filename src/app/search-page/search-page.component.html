@@ -1,0 +1,35 @@
+<body style="background: #f2f2f2">
+    <div id=search>
+        <form class="search-container" id="searchBox" [formGroup]="form">
+            <input type="text" id="search-id" placeholder="Find your next favourite book" formControlName="searchBox">
+            <a (click)="searchClicked()"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+        </form>
+    </div>
+    <div id=books *ngIf="!noBooks">
+        <div id="bok" *ngFor="let book of books">
+            <div id="up">
+                <div style="font-family: Roboto; background: white; width: 400px;   height: 300px;  box-shadow: grey 10px 10px 5px;">
+                    <div style="position: absolute;  display: flex;      top: -40px;">
+                        <div>
+                            <img src={{book.volumeInfo.imageLinks.smallThumbnail}} alt>
+
+                        </div>
+                        <div id="book-info">
+                            <h3 style="color: rgb(151, 151, 151); text-overflow: ellipsis;">
+                                {{book.volumeInfo.title}} {{book.volumeInfo.subtitle}}
+                            </h3>
+                            by {{book.volumeInfo.authors}}
+                            <br> published by {{book.volumeInfo.publisher}}
+                            <div style="margin-top: 3%">
+                                <button class="ui teal button">See this book</button>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
