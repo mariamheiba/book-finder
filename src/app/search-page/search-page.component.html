@@ -1,18 +1,26 @@
-<body style="background: #f2f2f2">
+<body style="background: hsl(0, 0%, 95%)">
     <div id=search>
         <form class="search-container" id="searchBox" [formGroup]="form">
-            <input type="text" id="search-id" placeholder="Find your next favourite book" formControlName="searchBox">
-            <a (click)="searchClicked()"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
+            <div class="search">
+                <input type="text" id="search-id" placeholder="Find your next favourite book" formControlName="searchBox">
+                <button (click)="searchClicked()" type="submit" class="searchButton">   
+                    <i class="fa fa-search"></i>
+            </button>
+            </div>
         </form>
     </div>
     <app-loading *ngIf="showSpinner"></app-loading>
+    <div *ngIf="noBooks" style="background: #f2f2f2;" class="jumbotron text-center">
+        <i style="  width: 70%;     font-size: x-large;" class="fa fa-search"> Sorry, no books where found</i>
+
+    </div>
     <div id=books *ngIf="!noBooks">
         <div id="bok" *ngFor="let book of books">
             <div id="up">
                 <div style="font-family: Roboto; background: white; width: 400px;   height: 300px;  box-shadow: grey 10px 10px 5px;">
                     <div style="position: absolute;  display: flex;      top: -40px;">
                         <div>
-                            <img src={{book.volumeInfo.imageLinks.smallThumbnail}} alt>
+                            <img [src]="book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : 'assets/no_cover_thumb.gif'" alt>
 
                         </div>
                         <div id="book-info">

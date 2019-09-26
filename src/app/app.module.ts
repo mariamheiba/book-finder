@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { LoadingComponent } from './loading/loading.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { LoadingComponent } from './loading/loading.component';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    AngularFontAwesomeModule,
    
   
 
