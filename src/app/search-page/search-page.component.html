@@ -5,6 +5,7 @@
             <a (click)="searchClicked()"><img class="search-icon" src="http://www.endlessicons.com/wp-content/uploads/2012/12/search-icon.png"></a>
         </form>
     </div>
+    <app-loading *ngIf="showSpinner"></app-loading>
     <div id=books *ngIf="!noBooks">
         <div id="bok" *ngFor="let book of books">
             <div id="up">
