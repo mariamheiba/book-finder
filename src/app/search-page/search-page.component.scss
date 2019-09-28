@@ -13,7 +13,8 @@ html {
 .search-container {
     width: 490px;
     display: block;
-    margin: 0 auto;
+    margin-left: 35%;
+    min-width: 490px;
 }
 
 input#search-id {
@@ -61,7 +62,8 @@ input#search-id {
     justify-items: center;
     padding-left: 15%;
     padding-right: 15%;
-    background: #f2f2f2
+    background: #f2f2f2;
+    min-width: 1410px;
 }
 
 #bok {
@@ -86,6 +88,8 @@ input#search-id {
     color: rgb(161, 161, 161);
     padding-right: 5px;
     text-overflow: ellipsis;
+    height: 245px;
+    overflow-y: scroll;
 }
 
 a.button {
@@ -94,6 +98,9 @@ a.button {
     appearance: button;
     text-decoration: none;
     color: initial;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    box-shadow: grey 3px 5px 5px;
 }
 
 .row {

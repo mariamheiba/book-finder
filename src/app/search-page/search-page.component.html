@@ -1,5 +1,6 @@
 <body style="background: hsl(0, 0%, 95%)">
     <div id=search>
+        <h1 style="margin-left: 45%;     color: cornflowerblue;">Book finder</h1>
         <form class="search-container" id="searchBox" [formGroup]="form">
             <div class="search">
                 <input type="text" id="search-id" placeholder="Find your next favourite book" formControlName="searchBox">
@@ -20,7 +21,7 @@
                 <div style="font-family: Roboto; background: white; width: 400px;   height: 300px;  box-shadow: grey 10px 10px 5px;">
                     <div style="position: absolute;  display: flex;      top: -40px;">
                         <div>
-                            <img [src]="book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : 'assets/no_cover_thumb.gif'" alt>
+                            <img [src]="book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.smallThumbnail : 'assets/no_cover_thumb.gif'" style="    box-shadow: grey 3px 5px 5px;" alt>
 
                         </div>
                         <div id="book-info">
